@@ -3,17 +3,20 @@
 {% block body %}
 
     <form action="/sports" method="post">
-        <input name="name" placeholder="Name" type="text">
+        <input name="name" placeholder="Name" required type="text">
         <select name="sport">
             <option disabled selected>Select a sport</option>
-            <option value="Basketball">Basketball</option>
-            <option value="Soccer">Soccer</option>
-            <option value="Frisbee">Frisbee</option>
+            {% for sport in sports %}
+                <option value="{{ sport }}">{{ sport }}</option>
+            {% endfor %}
         </select>
         <button type="submit">Register</button>
     </form>
     <form action="/" method="get">
         <button type="submit">Go back</button>
+    </form>
+    <form action="/sports/registrants" method="get">
+        <button type="submit">See register list</button>
     </form>
 
 {% endblock %}

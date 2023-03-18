@@ -3,9 +3,12 @@
 {% block body %}
 
     <h1>Hello, {{ name }}!</h1>
-    <p>You have registered to the following sport: {{ sport }}</p>
+    <p>You have registered to the following sport: {{ sport }}.</p>
     <form action="/sports" method="get">
         <button type="submit">Go back</button>
+    </form>
+    <form action="/sports/registrants" method="get">
+        <button type="submit">See register list</button>
     </form>
 
 {% endblock %}
