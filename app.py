@@ -14,3 +14,14 @@ def index():
         if name == "":
             name = "World"
         return render_template("greet.html", name = name)
+
+@app.route("/sports", methods=["GET", "POST"])
+def sports():
+    if request.method == "GET":
+        return render_template("sports.html")
+    if request.method == "POST":
+        name = request.form.get("name", "World")
+        sport = request.form.get("sport", "No sport selected")
+        if name == "":
+            name = "World"
+        return render_template("register-success.html", name = name, sport = sport)

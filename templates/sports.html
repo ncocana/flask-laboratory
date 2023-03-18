@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <form action="/sports" method="post">
+        <input name="name" placeholder="Name" type="text">
+        <select name="sport">
+            <option disabled selected>Select a sport</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Frisbee">Frisbee</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+    <form action="/" method="get">
+        <button type="submit">Go back</button>
+    </form>
+
+{% endblock %}
